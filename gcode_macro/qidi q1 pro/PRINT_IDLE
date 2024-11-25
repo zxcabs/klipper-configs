@@ -1,0 +1,18 @@
+[gcode_macro PRINT_IDLE]
+gcode:
+    M104 S0
+    M140 S0  
+    M190 S0
+    M106 P0 S0
+    M106 P2 S0
+    M106 P3 S0
+
+    SET_PIN PIN=caselight VALUE=0
+
+    SET_STEPPER_ENABLE STEPPER=stepper_x enable=0
+    SET_STEPPER_ENABLE STEPPER=stepper_y enable=0
+    SET_STEPPER_ENABLE STEPPER=stepper_z enable=0
+    SET_STEPPER_ENABLE STEPPER=stepper_z1 enable=0
+    SET_STEPPER_ENABLE STEPPER=extruder enable=0
+    
+    DISABLE_ALL_SENSOR
